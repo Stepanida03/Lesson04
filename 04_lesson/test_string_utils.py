@@ -26,7 +26,7 @@ def test_trim_positive(input_str, result):
 
 #Negative test
 
-@pytest.mark.parametrize('input_str, result', [(" 159", " 159"),  ( " 😉", " 😉")])
+@pytest.mark.parametrize('input_str, result', [(" 159", "159"),  ( " 😉", "😉")])
 def test_trim_negative(input_str, result):
     assert StringUtils.trim(input_str) == result
 
@@ -93,6 +93,7 @@ def test_is_empty_positive(input_str, result):
 #Преобразует список элементов в строку с указанным разделителем
 # Positive test
 
-#@pytest.mark.parametrize('input_list, input_joiner, result', ["a", "ag", "aga"], "*",  "a, ag, aga")
-#def test_list_to_string_positive(input_list, input_joiner, result):
-   # assert StringUtils.list_to_string(input_list, input_joiner) == result
+@pytest.mark.parametrize('input_list, input_joiner, result', [(["a", "ag", "aga"], "*",  "a, ag, aga"), (["a"], ", ", "a"),
+    ([], ", ", ""),])
+def test_list_to_string_positive(input_list, input_joiner, result):
+   assert StringUtils.list_to_string(input_list, input_joiner) == result
