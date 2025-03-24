@@ -7,16 +7,12 @@ driver = webdriver.Chrome()
 
 #Получить текст из зеленой плашки
 
+driver.implicitly_wait(20)
+
 driver.get("http://uitestingplayground.com/ajax")
-blue_button = driver.find_element(By.CSS_SELECTOR, "#ajaxButton")
+blue_button = driver.find_element(By.CSS_SELECTOR, "#ajaxButton").click()
 
-blue_button.click()
-sleep(20)
-
-green_line = driver.find_element(By.CSS_SELECTOR, "#content > p")
-green_line.text
-
-get_title = green_line.text
-print(get_title)
+green_line = driver.find_element(By.CSS_SELECTOR, "#content > p").text
+print(green_line)
 
 driver.quit()
