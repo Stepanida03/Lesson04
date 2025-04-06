@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76b05524-ab82-423e-84c4-4e8bd69bffea" name="Changes" comment="Добавление файла гит игнор">
-      <change beforePath="$PROJECT_DIR$/.idea/Lesson04.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Lesson04.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_lesson/testfox.py" beforeDir="false" afterPath="$PROJECT_DIR$/05_lesson/testfox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06K_lesson/test_03_shop.py" beforeDir="false" afterPath="$PROJECT_DIR$/06K_lesson/test_03_shop.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,16 +43,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.StringUtils.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;lesson5.1&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/79053/PycharmProjects/Lesson04/05_lesson&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.StringUtils.executor": "Run",
+    "Python.test.executor": "Debug",
+    "Python.test_03_shop.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "lesson6K",
+    "last_opened_file_path": "C:/Users/79053/PycharmProjects/Lesson04/05_lesson"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\79053\PycharmProjects\Lesson04\05_lesson" />
@@ -61,7 +63,7 @@
       <recent name="C:\Users\79053\PycharmProjects\Lesson04\05_lesson" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager">
     <configuration name="StringUtils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Lesson04" />
       <option name="ENV_FILES" value="" />
@@ -154,5 +156,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавление файла гит игнор" />
     <option name="LAST_COMMIT_MESSAGE" value="Добавление файла гит игнор" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/05_lesson/test.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
