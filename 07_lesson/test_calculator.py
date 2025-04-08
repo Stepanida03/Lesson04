@@ -6,6 +6,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from pages.MainPage import Calculator
+from pages.MainPage import Proverka
+
 
 def test_calculator():
     driver = webdriver.Chrome()
@@ -16,12 +18,11 @@ def test_calculator():
     
     WebDriverWait(driver, 70).until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "#calculator > div.top > div"), '15'))
 
-   #Проверочка
-    itog = driver.find_element(By.CSS_SELECTOR, "#calculator > div.top > div").text
-    assert itog == "15"
+    pro_verka = Proverka(driver)
 
-    print(itog)
+    ho_to = pro_verka.chislo()
 
-    driver.quit()
+    itog = '15'
+    assert ho_to == itog
 
- 
+    driver.quit() 

@@ -49,4 +49,4 @@ class OverviewPage:
         itogo = self.driver.find_element(By.CSS_SELECTOR, "#checkout_summary_container > div > div.summary_info > div.summary_total_label").text
         return itogo
 
-    
+   

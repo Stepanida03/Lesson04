@@ -19,8 +19,12 @@ class Calculator:
         self.driver.find_element(By.XPATH, '//span[text()="8"]').click()
         self.driver.find_element(By.XPATH, '//span[text()="="]').click()
 
-    
-    
-     
-        
-       
+class Proverka:
+
+    def __init__(self, driver):
+        self.driver = driver
+
+    def chislo(self):
+      
+        ravno = self.driver.find_element(By.CSS_SELECTOR, "#calculator > div.top > div").text
+        return ravno

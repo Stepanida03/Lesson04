@@ -29,4 +29,5 @@ def test_shop():
     assert as_is == total
 
     driver.quit()
+
    
