@@ -24,35 +24,35 @@ def test_db_connection(db_session):
     assert 'student' in names
 
 def test_insert(db_session):
-    sql = text('INSERT INTO student (student_id, level, form) VALUES (student_id, level, form)')
-    db_session.execute(sql, {'student_id': 2610, 'level': 'Pre-Intermediate', 'form': 'personal'})
+    sql = text('INSERT INTO student (user_id, level, education_form) VALUES (user_id, level, education_form)')
+    db_session.execute(sql, {'user_id': 2610, 'level': 'Pre-Intermediate', 'education_form': 'personal'})
     db_session.commit()
 
-    result = db_session.execute(text("SELECT * FROM student WHERE student_id = :student_id"), {'student_id': 2610})
+    result = db_session.execute(text("SELECT * FROM student WHERE user_id = :user_id"), {'user_id': 2610})
     row = result.fetchall()
     assert row is not None
     assert row [0][1] == 'Pre-Intermediate'
 
 def test_update(db_session):
-    db_session.execute(text('INSERT INTO student (student_id, level, form) VALUES (student_id, level, form)'),{'student_id': 2610, 'level': 'Pre-Intermediate', 'form': 'personal'})
+    db_session.execute(text('INSERT INTO student (user_id, level, education_form) VALUES (user_id, level, education_form)'),{'user_id': 2610, 'level': 'Pre-Intermediate', 'education_form': 'personal'})
     db_session.commit()
 
-    sql = text("UPDATE student SET form = :form WHERE student_id = :student_id")
-    db_session.execute(sql, {'form': 'group', 'student_id': 2610})
+    sql = text("UPDATE student SET education_form = :education_form WHERE user_id = :user_id")
+    db_session.execute(sql, {'education_form': 'group', 'user_id': 2610})
     db_session.commit()
 
-    result = db_session.execute(text("SELECT form FROM student WHERE student_id = :student_id"), {'student_id': 2610})
+    result = db_session.execute(text("SELECT education_form FROM student WHERE user_id = :user_id"), {'user_id': 2610})
     row = result.fetchall()
     assert row[0][0] == 'group'
 
 def test_delete(db_session):
-    db_session.execute(text('INSERT INTO student (student_id, level, form) VALUES (student_id, level, form)'),{'student_id': 2610, 'level': 'Pre-Intermediate', 'form': 'group'})
+    db_session.execute(text('INSERT INTO student (user_id, level, education_form) VALUES (user_id, level, education_form)'),{'user_id': 2610, 'level': 'Pre-Intermediate', 'education_form': 'group'})
     db_session.commit()
 
-    sql = text("DELETE FROM student WHERE student_id = :student_id")
-    db_session.execute(sql, {"student_id": 2610})
+    sql = text("DELETE FROM student WHERE user_id = :user_id")
+    db_session.execute(sql, {"user_id": 2610})
     db_session.commit()
 
-    result = db_session.execute(text("SELECT * FROM student WHERE student_id = :student_id"), {'student_id': 2610})
+    result = db_session.execute(text("SELECT * FROM student WHERE user_id = :user_id"), {'user_id': 2610})
     row = result.fetchone()
     assert row is None
