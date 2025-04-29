@@ -24,7 +24,7 @@ def test_db_connection(db_session):
     assert 'student' in names
 
 def test_insert(db_session):
-    sql = text('INSERT INTO student (user_id, level, education_form) VALUES (user_id, level, education_form)')
+    sql = text('INSERT INTO student (user_id, level, education_form) VALUES (:user_id, :level, :education_form)')
     db_session.execute(sql, {'user_id': 2610, 'level': 'Pre-Intermediate', 'education_form': 'personal'})
     db_session.commit()
 
@@ -34,7 +34,7 @@ def test_insert(db_session):
     assert row [0][1] == 'Pre-Intermediate'
 
 def test_update(db_session):
-    db_session.execute(text('INSERT INTO student (user_id, level, education_form) VALUES (user_id, level, education_form)'),{'user_id': 2610, 'level': 'Pre-Intermediate', 'education_form': 'personal'})
+    db_session.execute(text('INSERT INTO student (user_id, level, education_form) VALUES (:user_id, :level, :education_form)'),{'user_id': 2610, 'level': 'Pre-Intermediate', 'education_form': 'personal'})
     db_session.commit()
 
     sql = text("UPDATE student SET education_form = :education_form WHERE user_id = :user_id")
@@ -46,7 +46,7 @@ def test_update(db_session):
     assert row[0][0] == 'group'
 
 def test_delete(db_session):
-    db_session.execute(text('INSERT INTO student (user_id, level, education_form) VALUES (user_id, level, education_form)'),{'user_id': 2610, 'level': 'Pre-Intermediate', 'education_form': 'group'})
+    db_session.execute(text('INSERT INTO student (user_id, level, education_form) VALUES (:user_id, :level, :education_form)'),{'user_id': 2610, 'level': 'Pre-Intermediate', 'education_form': 'group'})
     db_session.commit()
 
     sql = text("DELETE FROM student WHERE user_id = :user_id")
