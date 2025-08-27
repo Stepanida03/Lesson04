@@ -45,7 +45,7 @@ button_2 = driver.find_element(By.CSS_SELECTOR, "#continue").click()
 #Вывести значение 
 
 Total = driver.find_element(By.CSS_SELECTOR, "#checkout_summary_container > div > div.summary_info > div.summary_total_label").text
-
+#print(Total)
 #Закрыть браузер нажатие Finish
 
 button_3 = driver.find_element(By.CSS_SELECTOR, "#finish").click()

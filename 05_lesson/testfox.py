@@ -50,4 +50,4 @@ Login_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".fa")))
 Login_button.click()
 
 sleep(3)
-driver.quit()
+driver.quit()  
